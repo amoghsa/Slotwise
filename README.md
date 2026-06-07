@@ -8,6 +8,7 @@ fully offline, has no accounts, and **keeps all your data on your device**.
 
 - 🛟 **Support / bugs:** open an issue, or email **amogh.agrawal@boomi.com**
 - 🔒 **Privacy policy:** [PRIVACY.md](./PRIVACY.md)
+- 📜 **Terms of use:** [TERMS.md](./TERMS.md)
 - 🧹 **Data deletion:** [DATA-DELETION.md](./DATA-DELETION.md)
 
 > "Slotwise" is a working name and may change before launch.

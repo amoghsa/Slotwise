@@ -1,7 +1,7 @@
 # Slotwise — Data Deletion
 
 **Effective date:** 2026-05-30
-**Last updated:** 2026-05-30
+**Last updated:** 2026-06-07
 
 This page describes how to delete data associated with your use of Slotwise (iOS
 and Android). It is published alongside the [Privacy Policy](./PRIVACY.md) to make
@@ -18,9 +18,17 @@ no account to delete — only on-device data.
 
 ## Is any of my data stored off my device?
 
-**No.** Slotwise collects and transmits nothing. There is no cloud copy, no
-analytics, and no telemetry to erase. Deleting your data is entirely under your
-control on the device itself.
+**We hold no account or profile about you** — there is no server-side copy of your
+household, kids, rules, or plans to erase, and no analytics or telemetry. Deleting
+your data is entirely under your control on the device itself. Two clarifications
+(see the [Privacy Policy](./PRIVACY.md) for detail):
+
+- If you have **device backup** enabled (iCloud on iOS, Google backup on Android),
+  a copy of the app's on-device data may live in *your own* backup, which you
+  manage in your device settings — we never receive it.
+- Optional features (Discover, place search) send **anonymous request parameters**
+  to fetch public listings; these are not tied to an account or stored as a profile
+  about you.
 
 ## How to delete your data
 
