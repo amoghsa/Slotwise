@@ -12,11 +12,16 @@ permissions the app uses.
 ## The short version
 
 - **No accounts.** No sign-up, login, username, password, or server-side profile.
-- **No tracking.** No analytics, no advertising, no crash/usage telemetry, and no
-  third-party tracking SDKs.
+- **No advertising.** No ad SDKs and no selling of data, ever.
+- **Anonymous usage analytics, which you can turn off.** Slotwise uses **Google
+  Firebase Analytics** to understand how the app is used (which screens are
+  visited, which features are tapped, and how long is spent) so we can improve it.
+  These events are **anonymous and contain no names, schedules, or other personal
+  details**. You can switch this off any time in **Settings → Privacy → Share
+  anonymous usage data**.
 - **Your family's data stays on your device.** Names, kids, caregivers, rules,
   activities, locations, and finalized plans are stored only in the app's private
-  storage. We never receive them.
+  storage. They are **never** sent to us or included in analytics.
 - **A few optional features make network requests** — finding nearby activities
   (Discover), looking up a place by name, and opening a facility's registration
   page. Each is described below, including exactly what is sent. None of them send
@@ -40,7 +45,7 @@ This data stays in the app's sandbox. We — the developer — never see it.
 
 ## When information leaves your device
 
-There are only four situations, all initiated by you:
+There are only five situations, all initiated by you:
 
 ### 1. Exporting your plan (calendar file)
 When you tap **Export**, Slotwise generates a standard calendar file (`.ics`) and
@@ -52,9 +57,10 @@ does not transmit the file.
 ### 2. Finding nearby activities (Discover)
 If you use **Discover**, the app requests public activity and event listings from
 the Slotwise catalog service. To return relevant results, the app sends the
-**search criteria you are filtering by** — which may include a child's **age**,
-selected **interest categories**, a **search location and radius** (coordinates
-you provided, not your live GPS), date range, and any **search text** you type.
+**search criteria you are filtering by** — which may include a child's or adult's
+**age**, selected **interest categories**, a **city or postal/ZIP code you type**,
+a **search location and radius** (coordinates you provided, not your live GPS),
+date range, and any **search text** you type.
 
 - These are sent as **anonymous query parameters**. There is no account, login, or
   identifier attached, and we do not build or keep a profile linked to you.
@@ -80,13 +86,44 @@ From a Discover listing, tapping **Register** opens the facility's own website i
 your browser or an in-app web view. That site is operated by the facility, not by
 Slotwise, and its own privacy policy and terms apply.
 
+### 5. Emailing us about missing activities (optional)
+If Discover has nothing for your area, you can tap **"Tell us what's missing"**.
+This opens **your own email app** with a pre-filled draft to `slotwise@amoghsa.com`
+containing the city/postal code and filters you were searching — you review and
+send it yourself, and you can edit or delete anything first. The app does not send
+email on its own, and the draft includes no names or on-device family data.
+
+## Usage analytics (Google Firebase Analytics)
+
+To understand how the app is used and where to improve it, Slotwise sends
+**anonymous usage events** to **Google Firebase Analytics**. This is the one form
+of data collection in the app, and you can **turn it off** in **Settings → Privacy
+→ Share anonymous usage data**.
+
+- **What is sent:** event names and non-identifying attributes — for example, a
+  screen name ("Discover"), a feature tag ("discover_filter_changed"), enum/category
+  values (e.g. an interest category like "swimming", a reminder offset like "1d"),
+  counts, and how long a screen was on-screen (dwell time). Firebase also collects
+  standard mobile analytics signals such as a random app-instance identifier, device
+  model, OS version, app version, and coarse region inferred from IP.
+- **What is never sent:** your or your kids'/caregivers' **names**, your household
+  label, your activities, your schedule/plans, exact locations, or any free-text you
+  type. Analytics carries **no personal content** — only the anonymous categories
+  above.
+- **Processor:** Google processes this data as described in its privacy policy and
+  the Firebase/Google Analytics for Firebase terms. We use it only in aggregate to
+  improve Slotwise; we do not sell it or use it for advertising.
+- **Your control:** the in-app toggle stops new events immediately. Analytics is
+  independent of the app's core features — turning it off does not affect anything.
+
 ## Permissions
 
 | Permission | Used for | Notes |
 |---|---|---|
 | **Camera** (iOS & Android) | Snapping a flyer/schedule for on-device text recognition (OCR) | Images are processed **on your device** and never uploaded. |
 | **Photos** | Choosing an existing flyer image for OCR | Uses the system **photo picker**; the app is not granted access to your photo library. |
-| **Notifications** | Local "registration opens" reminders you set | **Local notifications only** — there is no push server. |
+| **Notifications** | Local reminders you set: "registration opens" alerts and "before it starts" reminders for activities and watched events | **Local notifications only**, scheduled on-device from the device clock — there is no push server and no device token. |
+| **Run at startup** (Android) | Re-arming your local event reminders after a reboot (Android clears scheduled alarms on restart) | No network; only re-schedules reminders you already set. |
 
 Slotwise does **not** request location/GPS, contacts, microphone, or calendar
 write access.
@@ -110,25 +147,31 @@ your device's backup settings.
 
 Slotwise is intended for use by **adults (parents and caregivers)**, not by
 children, and is **not directed to children**. Although the app helps you plan
-*children's* activities, it has no accounts and collects nothing about anyone — adult
+*children's* activities, it has no accounts and builds no profile of anyone — adult
 or child — on any server. The details you type stay on your device. The only
 child-related information that ever leaves the device is the **anonymous filter
 values** (such as an age number and interest categories) used to fetch public
 Discover listings, as described above; these are not stored against an identity and
-do not constitute a child profile.
+do not constitute a child profile. The usage analytics described above measure how
+the *app* is used (screens, taps, timings) and **do not include children's names or
+any child profile**.
 
 ## Third-party services
 
 When you use the optional features above, these providers may process the related
 request under their own privacy policies:
 
+- **Google Firebase Analytics** (anonymous usage analytics; can be turned off in
+  Settings) — https://firebase.google.com/support/privacy and
+  https://policies.google.com/privacy
 - **Apple Maps** (place search on iOS) — https://www.apple.com/legal/privacy/
 - **Google** (geocoding on Android) — https://policies.google.com/privacy
 - **Vercel** (catalog API hosting) — https://vercel.com/legal/privacy-policy
 - **Turso** (catalog database) — https://turso.tech/privacy-policy
 - The **facility/organizer website** you open to register — their own policy
 
-Slotwise has no advertising or analytics SDKs.
+Slotwise has **no advertising SDKs**. Its only analytics is the anonymous Firebase
+Analytics described above, which you can disable in Settings.
 
 ## Your choices and rights
 
@@ -148,4 +191,4 @@ that feature is enabled. We will not silently add tracking.
 
 ## Contact
 
-Questions? Email **amogh.agrawal@boomi.com** or open an issue in this repository.
+Questions? Email **slotwise@amoghsa.com** or open an issue in this repository.

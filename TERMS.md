@@ -151,5 +151,5 @@ Columbia, Canada for any dispute arising out of these Terms or the Service.
 
 ## 12. Contact
 
-Questions about these Terms? Email **amogh.agrawal@boomi.com** or open an issue in
+Questions about these Terms? Email **slotwise@amoghsa.com** or open an issue in
 this repository.

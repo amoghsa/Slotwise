@@ -8,7 +8,7 @@ and Android). It is published alongside the [Privacy Policy](./PRIVACY.md) to ma
 deletion easy to find and to satisfy Google Play's user-data-deletion requirement
 (https://support.google.com/googleplay/android-developer/answer/13327111).
 
-If you have any trouble, email **amogh.agrawal@boomi.com** or open an issue in
+If you have any trouble, email **slotwise@amoghsa.com** or open an issue in
 this repository — we'll respond within 30 days.
 
 ## Does Slotwise have accounts?
@@ -19,9 +19,12 @@ no account to delete — only on-device data.
 ## Is any of my data stored off my device?
 
 **We hold no account or profile about you** — there is no server-side copy of your
-household, kids, rules, or plans to erase, and no analytics or telemetry. Deleting
-your data is entirely under your control on the device itself. Two clarifications
-(see the [Privacy Policy](./PRIVACY.md) for detail):
+household, kids, rules, or plans to erase. The app does send **anonymous usage
+analytics** (Google Firebase Analytics — screens, taps, timings; no names or
+plans), which you can turn off any time in **Settings → Privacy → Share anonymous
+usage data**; these events carry no identity to delete. Deleting your on-device
+data is entirely under your control. Two clarifications (see the
+[Privacy Policy](./PRIVACY.md) for detail):
 
 - If you have **device backup** enabled (iCloud on iOS, Google backup on Android),
   a copy of the app's on-device data may live in *your own* backup, which you
@@ -49,4 +52,4 @@ calendar app you imported them into.
 
 ## Contact
 
-Email **amogh.agrawal@boomi.com** or open an issue in this repository.
+Email **slotwise@amoghsa.com** or open an issue in this repository.
