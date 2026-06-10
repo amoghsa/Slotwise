@@ -1,7 +1,7 @@
 # Slotwise — Privacy Policy
 
 **Effective date:** 2026-06-07
-**Last updated:** 2026-06-07
+**Last updated:** 2026-06-09
 
 Slotwise (iOS and Android) is built privacy-first: **it has no accounts, builds no
 profile of you on any server, and keeps your family's information on your
@@ -22,6 +22,10 @@ permissions the app uses.
 - **Your family's data stays on your device.** Names, kids, caregivers, rules,
   activities, locations, and finalized plans are stored only in the app's private
   storage. They are **never** sent to us or included in analytics.
+- **Location, only if you allow it.** Discover can use your device's location to
+  show activities near you. It asks for the system location permission first; if
+  you decline, Discover falls back to a home address you set or a city you type.
+  Your location is used only to fetch nearby results — it is never stored or shared.
 - **A few optional features make network requests** — finding nearby activities
   (Discover), looking up a place by name, and opening a facility's registration
   page. Each is described below, including exactly what is sent. None of them send
@@ -59,8 +63,8 @@ If you use **Discover**, the app requests public activity and event listings fro
 the Slotwise catalog service. To return relevant results, the app sends the
 **search criteria you are filtering by** — which may include a child's or adult's
 **age**, selected **interest categories**, a **city or postal/ZIP code you type**,
-a **search location and radius** (coordinates you provided, not your live GPS),
-date range, and any **search text** you type.
+a **search location and radius** (from your device location if you allow it — see
+§3 — otherwise a home address you set), date range, and any **search text** you type.
 
 - These are sent as **anonymous query parameters**. There is no account, login, or
   identifier attached, and we do not build or keep a profile linked to you.
@@ -73,13 +77,24 @@ date range, and any **search text** you type.
 - The catalog itself is **read-only public content**. You cannot register, pay, or
   create an account through it.
 
-### 3. Looking up a place by name (optional)
-If you search for a location by name (for example, to set a venue or your home),
-the **text you type** is sent to your platform's map service — **Apple Maps
-(`MKLocalSearch`) on iOS** or **Google's geocoder on Android** — to look up
-matching places and coordinates. Their privacy terms govern that lookup. Slotwise
-does **not** access your device's current location or GPS, and requests no
-location permission.
+### 3. Using your location for nearby results (optional)
+Discover can use your device's **location** to show activities near you. The app
+requests the system **"while using the app" location permission** first; you can
+allow or decline:
+
+- **If you allow it**, your current coordinates are used **only** to build the same
+  anonymous geo search described in §2 (a latitude/longitude + radius). The location
+  is used in the moment to fetch nearby listings and is **not stored on a server,
+  not retained, and not shared**. There is no background or continuous tracking —
+  Discover takes a single fix when you open it.
+- **If you decline**, Discover falls back to a home address you set (or a city /
+  postal code you type), or shows all areas. You can change the permission any time
+  in your device Settings.
+
+Separately, when you **search for a place by name** (e.g. to set a venue or your
+home), the **text you type** is sent to your platform's map service — **Apple Maps
+(`MKLocalSearch`) on iOS** or **Google's geocoder on Android** — to look up matching
+places and coordinates, under their privacy terms.
 
 ### 4. Opening a facility's registration page
 From a Discover listing, tapping **Register** opens the facility's own website in
@@ -96,9 +111,10 @@ email on its own, and the draft includes no names or on-device family data.
 ## Usage analytics (Google Firebase Analytics)
 
 To understand how the app is used and where to improve it, Slotwise sends
-**anonymous usage events** to **Google Firebase Analytics**. This is the one form
-of data collection in the app, and you can **turn it off** in **Settings → Privacy
-→ Share anonymous usage data**.
+**anonymous usage events** to **Google Firebase Analytics**. Aside from the optional
+location use above (a single fix used in the moment for nearby results, never
+retained — §3), this is the only ongoing data collection in the app, and you can
+**turn it off** in **Settings → Privacy → Share anonymous usage data**.
 
 - **What is sent:** event names and non-identifying attributes — for example, a
   screen name ("Discover"), a feature tag ("discover_filter_changed"), enum/category
@@ -124,9 +140,10 @@ of data collection in the app, and you can **turn it off** in **Settings → Pri
 | **Photos** | Choosing an existing flyer image for OCR | Uses the system **photo picker**; the app is not granted access to your photo library. |
 | **Notifications** | Local reminders you set: "registration opens" alerts and "before it starts" reminders for activities and watched events | **Local notifications only**, scheduled on-device from the device clock — there is no push server and no device token. |
 | **Run at startup** (Android) | Re-arming your local event reminders after a reboot (Android clears scheduled alarms on restart) | No network; only re-schedules reminders you already set. |
+| **Location** (iOS & Android) | Showing activities **near you** in Discover (optional; "while using the app") | A single location fix is used to fetch nearby results; **not stored or shared**. Decline and use a typed city / home address instead. |
 
-Slotwise does **not** request location/GPS, contacts, microphone, or calendar
-write access.
+Slotwise does **not** request contacts, microphone, or calendar write access, and
+location is **optional** (used only for nearby Discover results, never tracked).
 
 ## On-device text recognition (OCR)
 
