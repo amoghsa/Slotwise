@@ -1,7 +1,7 @@
 # Slotwise — Privacy Policy
 
 **Effective date:** 2026-06-07
-**Last updated:** 2026-06-09
+**Last updated:** 2026-06-10
 
 Slotwise (iOS and Android) is built privacy-first: **it has no accounts, builds no
 profile of you on any server, and keeps your family's information on your
@@ -13,12 +13,15 @@ permissions the app uses.
 
 - **No accounts.** No sign-up, login, username, password, or server-side profile.
 - **No advertising.** No ad SDKs and no selling of data, ever.
-- **Anonymous usage analytics, which you can turn off.** Slotwise uses **Google
-  Firebase Analytics** to understand how the app is used (which screens are
-  visited, which features are tapped, and how long is spent) so we can improve it.
-  These events are **anonymous and contain no names, schedules, or other personal
-  details**. You can switch this off any time in **Settings → Privacy → Share
-  anonymous usage data**.
+- **Anonymous usage analytics and crash/performance diagnostics, which you can
+  turn off.** Slotwise uses **Google Firebase** to understand how the app is used
+  (which screens are visited, which features are tapped, and how long is spent —
+  Firebase Analytics), to learn when it crashes (a stack trace and device/OS/app
+  version — Firebase Crashlytics), and to measure how fast it runs (app start and
+  loading times — Firebase Performance) so we can improve it. All of it is
+  **anonymous and contains no names, schedules, or other personal details**. One
+  switch turns all of it off, any time: **Settings → Privacy → Share anonymous
+  usage & crash data**.
 - **Your family's data stays on your device.** Names, kids, caregivers, rules,
   activities, locations, and finalized plans are stored only in the app's private
   storage. They are **never** sent to us or included in analytics.
@@ -108,29 +111,41 @@ containing the city/postal code and filters you were searching — you review an
 send it yourself, and you can edit or delete anything first. The app does not send
 email on its own, and the draft includes no names or on-device family data.
 
-## Usage analytics (Google Firebase Analytics)
+## Usage analytics & crash/performance diagnostics (Google Firebase)
 
-To understand how the app is used and where to improve it, Slotwise sends
-**anonymous usage events** to **Google Firebase Analytics**. Aside from the optional
-location use above (a single fix used in the moment for nearby results, never
-retained — §3), this is the only ongoing data collection in the app, and you can
-**turn it off** in **Settings → Privacy → Share anonymous usage data**.
+To understand how the app is used, when it crashes, and where to improve it,
+Slotwise sends **anonymous usage events** to **Google Firebase Analytics**,
+**crash reports** to **Firebase Crashlytics**, and **performance measurements** to
+**Firebase Performance Monitoring**. Aside from the optional location use above (a
+single fix used in the moment for nearby results, never retained — §3), this is
+the only ongoing data collection in the app, and one switch turns all of it off:
+**Settings → Privacy → Share anonymous usage & crash data**.
 
-- **What is sent:** event names and non-identifying attributes — for example, a
+- **Usage events:** event names and non-identifying attributes — for example, a
   screen name ("Discover"), a feature tag ("discover_filter_changed"), enum/category
   values (e.g. an interest category like "swimming", a reminder offset like "1d"),
   counts, and how long a screen was on-screen (dwell time). Firebase also collects
   standard mobile analytics signals such as a random app-instance identifier, device
   model, OS version, app version, and coarse region inferred from IP.
+- **Crash reports:** if the app crashes, a report is sent containing the technical
+  **stack trace** (which code was running), the device model, OS version, app
+  version, and device state at the moment of the crash (e.g. free memory, whether
+  the app was in the foreground). Crash reports contain **no content from the app**
+  — no names, plans, typed text, or locations.
+- **Performance measurements:** anonymous timings — how long the app takes to
+  start, how long screens take to render, and how long requests to our own catalog
+  service take (the timing and response code only, never the contents).
 - **What is never sent:** your or your kids'/caregivers' **names**, your household
   label, your activities, your schedule/plans, exact locations, or any free-text you
-  type. Analytics carries **no personal content** — only the anonymous categories
-  above.
+  type. None of the above carries **personal content** — only the anonymous
+  categories described.
 - **Processor:** Google processes this data as described in its privacy policy and
-  the Firebase/Google Analytics for Firebase terms. We use it only in aggregate to
-  improve Slotwise; we do not sell it or use it for advertising.
-- **Your control:** the in-app toggle stops new events immediately. Analytics is
-  independent of the app's core features — turning it off does not affect anything.
+  the Firebase terms. We use it only in aggregate to improve Slotwise and fix bugs;
+  we do not sell it or use it for advertising.
+- **Your control:** the in-app toggle stops usage events, crash reporting, and
+  performance collection immediately, and the choice persists across launches. It
+  is independent of the app's core features — turning it off does not affect
+  anything.
 
 ## Permissions
 
@@ -178,8 +193,9 @@ any child profile**.
 When you use the optional features above, these providers may process the related
 request under their own privacy policies:
 
-- **Google Firebase Analytics** (anonymous usage analytics; can be turned off in
-  Settings) — https://firebase.google.com/support/privacy and
+- **Google Firebase** — Analytics (anonymous usage analytics), Crashlytics (crash
+  reports) and Performance Monitoring (anonymous timings); all can be turned off
+  together in Settings — https://firebase.google.com/support/privacy and
   https://policies.google.com/privacy
 - **Apple Maps** (place search on iOS) — https://www.apple.com/legal/privacy/
 - **Google** (geocoding on Android) — https://policies.google.com/privacy
@@ -187,8 +203,9 @@ request under their own privacy policies:
 - **Turso** (catalog database) — https://turso.tech/privacy-policy
 - The **facility/organizer website** you open to register — their own policy
 
-Slotwise has **no advertising SDKs**. Its only analytics is the anonymous Firebase
-Analytics described above, which you can disable in Settings.
+Slotwise has **no advertising SDKs**. Its only analytics and diagnostics are the
+anonymous Firebase Analytics, Crashlytics, and Performance Monitoring described
+above, all of which you can disable with one switch in Settings.
 
 ## Your choices and rights
 
